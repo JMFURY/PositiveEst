@@ -50,6 +50,8 @@ namespace PositiveEst
                app.UseSignalR(routes =>
             {
                 routes.MapHub<RealtimeCounterHub>("/realtimecounter");
+                routes.MapHub<RealtimeChatHub>("/realtimechat");
+
             });
             app.UseMvc(routes =>
             {

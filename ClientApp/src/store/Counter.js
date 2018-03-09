@@ -11,7 +11,7 @@ const initialState = { count: 0 };
 var transportType = signalR.TransportType.ServerSentEvents;
 //can also be ServerSentEvents or LongPolling
 var thislogger = new signalR.ConsoleLogger(signalR.LogLevel.Information);
-var counterHub = new signalR.HttpConnection(`http://${document.location.host}/realtimecounter`, { transport: transportType, logging: thislogger});
+var counterHub = new signalR.HttpConnection(`https://${document.location.host}/realtimecounter`, { transport: transportType, logging: thislogger});
 var counterConnection = new signalR.HubConnection(counterHub);
 
 counterConnection.onclose = e => {
